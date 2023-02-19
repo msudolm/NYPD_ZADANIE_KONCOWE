@@ -4,10 +4,10 @@ from tools.unify_data import unify_dataframes
 from tools.analysis import analyze
 
 
-print_df_stzes = True
+print_df_sizes = True
 
 #function loads data from files to dataframes: year x country_name
-def load(args,  prt_sizes=print_df_stzes):
+def load(args,  prt_sizes=print_df_sizes):
 	print("\nWczytuję dane...") #print("\nLoading data from paths...")
 	dfs = load_dataframes(args.population, args.gdp, args.emission)
 	if prt_sizes: print_sizes(dfs)
@@ -15,7 +15,7 @@ def load(args,  prt_sizes=print_df_stzes):
 	return dfs
 
 #function filters years aceording to --start and --end arguments if provided
-def filter_start_end(args, dfs,  prt_sizes=print_df_stzes):
+def filter_start_end(args, dfs,  prt_sizes=print_df_sizes):
 	if args.start is not None or args.end is not None:
 		print(f"\nFiltruję dane zgodnie z zadanymi parametrami start/end...")
 		if args.start is not None: dfs = [df.loc[df.index >= args.start] for df in dfs]
@@ -26,7 +26,7 @@ def filter_start_end(args, dfs,  prt_sizes=print_df_stzes):
 	return dfs
 
 #function crops dataframes to contain only countries and years present in all dataframes
-def crop_to_shared_records(dfs,  prt_sizes=print_df_stzes):
+def crop_to_shared_records(dfs,  prt_sizes=print_df_sizes):
 	print("\nFiltrowanie krajów i lat występujących we wszystkich tabelach...")
 	dfs = unify_dataframes(dfs)
 
