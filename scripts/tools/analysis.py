@@ -50,7 +50,8 @@ def top_differences(df, k=10):
     
     assert k >0
     if len(df) < k:
-        print(f"Zadany przedział lat ({k}) większy niż liczba dostępnych danych ({len(df)} lat).\Podaj mniejszy przedział")
+        print(f"\tUwaga! Zadany przedział lat ({k}) jest większy niż liczba lat dostępnych w danych ({df.shape[0]}).",
+            "Nie zostanie przeprowadzona analiza spadku / wzrostu emisji dla okresu ostatnich 10 lat.")
         return
     
     diffs = df.iloc[-1] - df.iloc[-k]

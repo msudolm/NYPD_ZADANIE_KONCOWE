@@ -9,8 +9,6 @@ def load_raw_dataframes_from_paths(population_path, gdp_path, co2_path):
     
     return [df_population_raw, df_gdp_raw, df_co2_raw]
 
-
-
 def prepare_worldbank_df(raw_df):
     '''Funkcja przygotowuje dane z formatu z'data.worldbank.org'
     do analizy (tabela postaci lata x kraje)'''
@@ -44,6 +42,20 @@ def load_dataframes(population_path, gdp_path, co2_path):
 
 	return [df_population, df_gdp, df_co2]
 
+
+def print_sizes(dfs, language='pl'):
+    assert len(dfs) == 3
+    assert language in {'pl', 'en'}
+
+    if language == 'en':
+        print("\tDataframes content:")
+        for name, df in zip(['population', 'gdp', 'emission'], dfs):
+            print(f"\t{name}: {df.shape[0]} years, {df.shape[1]} countries")
+
+    if language == 'pl':
+        print("\tZawartość ramek danych:")
+        for name, df in zip(['population', 'gdp', 'emission'], dfs):
+            print(f"\t{name}: {df.shape[0]} (lata) x {df.shape[1]} (kraje)")
 
 if __name__ == "__main__":
 	pass
