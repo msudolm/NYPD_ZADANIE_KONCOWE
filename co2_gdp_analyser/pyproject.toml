@@ -2,15 +2,18 @@
 requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
 
-
 [project]
 name = "co2_gdp_analyser"
 version = "0.0.1"
-description = "Package to analyse co2 gdp data"
+authors = [
+  { name="Malgorzata Sudol"},]
+description = "Package for analyzing co2 emission and GDP data."
 readme = "README.md"
 requires-python = ">=3.7"
 classifiers = [
     "Programming Language :: Python :: 3",
     "License :: OSI Approved :: MIT License",
-    "Operating System :: OS Independent",
 ]
+
+[project.urls]
+"Homepage" = "https://github.com/msudolm/NYPD_ZADANIE_KONCOWE/tree/main"

@@ -1,3 +1,11 @@
-# Uruchamianie analizy
+# Running:
 
-`python3 run_analysis.py --population population_data_filepath --gdp gdp_data_filepath ----emission emission__data_filepath [--start earliest_year_considered] [--end latest_year_considered]`
+python3 run_analysis.py --population POPULATION_FILE --gdp GDP_FILE --emission EMISSION_FILE [--start START] [--end END]
+
+
+- POPULATION_FILE - path to file with population data (worldbank format).
+- GDP_FILE - path to file with GDP data (worldbank format).
+- EMISSION_FILE path to file with emission data ( format).
+
+- START - earliest year included in analysis.
+- END - latest year included in aalysis.
